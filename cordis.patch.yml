@@ -1,0 +1,6 @@
+- insert:
+    - id: zephyr-theme
+      name: 'dsh-zephyr-theme'
+      config:
+        # 启动画面停留时长（毫秒）。0 = 不显示，最大 10000。
+        splashMs: 2000

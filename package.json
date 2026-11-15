@@ -1,0 +1,31 @@
+{
+  "name": "dsh-zephyr-theme",
+  "version": "0.1.1",
+  "description": "Zephyr (防风) interface theme for DeepSeek Harness: cold-teal palette, character backdrop on the blank page and drifting snow.",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.png"
+  },
+  "files": [
+    "index.js",
+    "theme.css",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.png"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}
