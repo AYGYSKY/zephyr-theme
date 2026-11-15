@@ -1,0 +1,76 @@
+/*
+ * Zephyr（防风）界面主题 —— 只替换设计令牌，不碰任何组件类名。
+ *
+ *   1. 先把两组「原始色阶」换成防风的冷青灰与代表色 #009E9D；
+ *   2. 宿主自己的 alias 会从这些色阶派生，所以组件不用单独改；
+ *   3. 全部挂在 `html[data-zephyr-ui]` 下，撤掉属性就完全还原。
+ *
+ * 明暗不是两套色阶，而是一套色阶的两端：浅色模式读低档（雪白），
+ * 暗色模式读高档（墨夜），中间的对比阶梯与官方一致。
+ */
+
+/* 圆角：制服感的小圆角。 */
+html[data-zephyr-ui] body,
+html[data-zephyr-ui] body[data-ds-dark-theme] {
+  --dsw-radius-xs: 2px;
+  --dsw-radius-sm: 4px;
+  --dsw-radius-md: 6px;
+  --dsw-radius-lg: 8px;
+  --dsw-radius-xl: 10px;
+  --dsw-radius-panel: 12px;
+
+  --dsw-alias-bg-document-selection: color-mix(in srgb, var(--dsw-static-deepseek-500) 28%, transparent);
+}
+
+/* 中性色阶：雪白(#fbfdfd) → 墨夜(#0c1116)，一路带一点青 */
+html[data-zephyr-ui] body,
+html[data-zephyr-ui] body[data-ds-dark-theme] {
+  --dsw-static-neutral-bluish-00: #fbfdfd;
+  --dsw-static-neutral-bluish-50: #f4f8f8;
+  --dsw-static-neutral-bluish-60: #eef4f4;
+  --dsw-static-neutral-bluish-75: #e8efef;
+  --dsw-static-neutral-bluish-100: #e1eaeb;
+  --dsw-static-neutral-bluish-150: #d9e3e4;
+  --dsw-static-neutral-bluish-200: #cfdcdd;
+  --dsw-static-neutral-bluish-300: #b9cbcd;
+  --dsw-static-neutral-bluish-400: #93a9ad;
+  --dsw-static-neutral-bluish-500: #74868f;
+  --dsw-static-neutral-bluish-600: #5f7078;
+  --dsw-static-neutral-bluish-700: #3a4a56;
+  --dsw-static-neutral-bluish-750: #2b3a45;
+  --dsw-static-neutral-bluish-800: #23303a;
+  --dsw-static-neutral-bluish-850: #1d2730;
+  --dsw-static-neutral-bluish-875: #182129;
+  --dsw-static-neutral-bluish-900: #141c23;
+  --dsw-static-neutral-bluish-950: #10171d;
+  --dsw-static-neutral-bluish-1000: #0c1116;
+}
+
+/* 品牌色阶：由 #009E9D 派生的 11 档，强调色只用 300–700 */
+html[data-zephyr-ui] body,
+html[data-zephyr-ui] body[data-ds-dark-theme] {
+  --dsw-static-deepseek-50: #e6f7f7;
+  --dsw-static-deepseek-100: #ccf0ef;
+  --dsw-static-deepseek-200: #9de4e2;
+  --dsw-static-deepseek-300: #5fd3d0;
+  --dsw-static-deepseek-400: #2ec1be;
+  --dsw-static-deepseek-450: #12b0ad;
+  --dsw-static-deepseek-500: #009e9d;
+  --dsw-static-deepseek-600: #007a79;
+  --dsw-static-deepseek-700-delete: #00605f;
+  --dsw-static-deepseek-800: #004a49;
+  --dsw-static-deepseek-900: #003534;
+}
+
+/* 少量 alias：官方那几处把品牌蓝和深灰混在一起的地方，改成同色系 */
+html[data-zephyr-ui] body {
+  --dsw-alias-label-deep-diving: color-mix(in srgb, var(--dsw-static-deepseek-500) 80%, var(--dsw-static-neutral-bluish-1000));
+  --dsw-alias-label-deep-diving-shimmer: color-mix(in srgb, var(--dsw-static-deepseek-500) 32%, var(--dsw-static-neutral-bluish-00));
+  --dsw-alias-label-primary-bluish: color-mix(in srgb, var(--dsw-static-deepseek-600) 70%, var(--dsw-static-neutral-bluish-1000));
+}
+
+html[data-zephyr-ui] body[data-ds-dark-theme] {
+  --dsw-alias-label-deep-diving: color-mix(in srgb, var(--dsw-static-deepseek-400) 72%, var(--dsw-static-neutral-bluish-400));
+  --dsw-alias-label-deep-diving-shimmer: color-mix(in srgb, var(--dsw-static-deepseek-300) 60%, var(--dsw-static-deepseek-400));
+  --dsw-alias-label-primary-bluish: var(--dsw-static-deepseek-200);
+}
