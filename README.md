@@ -24,7 +24,7 @@ ANSE安娜斯千
 
 ## 安装
 ```bash
-dsh plugin --profile web add github:AYGYSKY/zephyr-theme
+dsh plugin --profile web add dsh-zephyr-theme
 ```
 把 `dist/dsh-zephyr-theme-0.1.1.tgz` 发给对方，在 DSH 里对助手说：
 
