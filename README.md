@@ -23,7 +23,6 @@ ANSE安娜斯千
 > 需要 DSH **44.7.0 或更高**。
 
 ## 安装
-
 ```bash
 dsh plugin --profile web add github:AYGYSKY/zephyr-theme
 ```
